@@ -62,6 +62,7 @@ body {
 }
 .logo-header {
   height: 50px;
+  margin-left: 10px;
 }
 
 header {
@@ -470,13 +471,12 @@ a.meu-link:hover {
 /* INSTAGRAM */
 .instagram-float {
   position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 90px; /* fica acima do WhatsApp */
+  width: 50px;
+  height: 50px;
+  bottom: 90px; /* acima do WhatsApp */
   right: 20px;
 
   background: #c39c61;
-
   color: #fff;
   border-radius: 50%;
   text-align: center;
@@ -492,6 +492,10 @@ a.meu-link:hover {
   transition: 0.3s ease;
 }
 
+.instagram-float i {
+  font-size: 24px;
+}
+
 .instagram-float:hover {
   transform: scale(1.1);
 }
@@ -501,10 +505,13 @@ a.meu-link:hover {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  width: 60px;
-  height: 60px;
+
+  width: 50px;
+  height: 50px;
+
   background-color: #c39c61;
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -516,10 +523,13 @@ a.meu-link:hover {
   transition: 0.3s ease;
 }
 
+.whatsapp-float i {
+  font-size: 24px;
+}
+
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
-
 /* FOOTER */
 .footer-content {
   display: flex;
