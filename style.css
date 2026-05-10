@@ -1121,23 +1121,42 @@ a.meu-link:hover {
     justify-content: space-between;
   }
 
-  /* HERO */
+ /* ================= HERO MOBILE ================= */
+@media (max-width: 768px) {
   .hero {
-    padding: 60px 15px;
+    padding: 90px 20px 70px;
   }
 
   .hero-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
   }
 
   .hero-text {
     max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-img img {
-    max-width: 250px;
+    width: 100%;
+    max-width: 340px;
+    transform: scale(1); /* remove aumento do desktop */
+    object-fit: contain;
   }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 480px) {
+  .hero-img img {
+    max-width: 280px;
+  }
+}
 
   /* BOTÃO */
   .btn {
