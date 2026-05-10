@@ -49,19 +49,19 @@ body {
 }
 
 .logo img {
-  height: 80px;
+  height: 55px;
   width: auto;
   object-fit: contain;
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .logo img {
-    width: 50px;
+    height: 42px;
   }
-
-  .logo-header {
-    height: 60px;
-  }
+}
+.logo-header {
+  height: 50px;
 }
 
 header {
@@ -76,7 +76,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 10px 15px;
 }
 
 header h1 {
