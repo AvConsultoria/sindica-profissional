@@ -650,32 +650,49 @@ a.meu-link:hover {
   }
 }
 
-/* BOTÃO ☰ */
-.menu-toggle {
-  display: block;
-  z-index: 1001;
-}
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 15px;
+  }
 
-/* MENU LATERAL */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-nav a {
-  color: #0e1f41;
-  text-decoration: none;
-  font-weight: 500;
-}
+  /* BOTÃO ☰ */
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
 
-.menu-toggle {
-  display: none;
-}
+  /* MENU LATERAL */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -260px; /* escondido */
+    width: 260px;
+    height: 100%;
+    background: linear-gradient(135deg, #c39c61, #f2ebc4);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: 0.3s;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
 
-/* QUANDO ABRE */
-nav.active {
-  right: 0;
+  nav a {
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: 600; /* semi-negrito (bonito) */
+  }
+
+  /* QUANDO ABRE */
+  nav.active {
+    right: 0;
+  }
 }
 
 /* AGENDAMENTO */
@@ -1104,13 +1121,22 @@ nav.active {
     justify-content: space-between;
   }
 
-  /* ================= HERO MOBILE ================= */
+  /* HERO */
+  .hero {
+    padding: 60px 15px;
+  }
 
-  /* CELULARES PEQUENOS */
-  @media (max-width: 480px) {
-    .hero-img img {
-      max-width: 280px;
-    }
+  .hero-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-img img {
+    max-width: 250px;
   }
 
   /* BOTÃO */
@@ -1261,6 +1287,28 @@ body {
   padding: 15px;
 }
 
+/* ================= HERO ================= */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 15px;
+    text-align: center;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-img img {
+    max-width: 220px;
+    margin: auto;
+  }
+}
+
 /* ================= CARDS SERVIÇOS ================= */
 @media (max-width: 768px) {
   .cards-servicos {
@@ -1301,6 +1349,22 @@ body {
   #contato p {
     font-size: 14px;
     word-break: break-word; /* evita email estourar */
+  }
+}
+
+/* ================= HEADER / MENU ================= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav {
+    width: 75%;
+    right: -100%;
+  }
+
+  nav.active {
+    right: 0;
   }
 }
 
@@ -1393,116 +1457,4 @@ body {
 
 .footer-content {
   align-items: center;
-}
-
-/* ================= HERO MOBILE FINAL ================= */
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 100px 20px 70px;
-    text-align: center;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .hero-text {
-    max-width: 100%;
-  }
-
-  .hero-text h1 {
-    font-size: 28px;
-    line-height: 1.2;
-  }
-
-  .hero-text p {
-    font-size: 15px;
-  }
-
-  .hero-img {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero-img img {
-    width: 100%;
-    max-width: 320px;
-    object-fit: contain;
-    margin: auto;
-  }
-
-  .scroll-indicator {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 90px 15px 60px;
-  }
-
-  .hero-text h1 {
-    font-size: 23px;
-  }
-
-  .hero-text p {
-    font-size: 14px;
-  }
-
-  .hero-img img {
-    max-width: 260px;
-  }
-}
-
-/* ================= MENU MOBILE ================= */
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    z-index: 1001;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-
-    width: 260px;
-    height: 100vh;
-
-    background: linear-gradient(135deg, #c39c61, #f2ebc4);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding-top: 90px;
-
-    transition: 0.3s ease;
-
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-
-    z-index: 1000;
-  }
-
-  nav a {
-    margin: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  nav.active {
-    right: 0;
-  }
-
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  }
 }
