@@ -58,6 +58,10 @@ body {
   .logo img {
     width: 50px;
   }
+
+  .logo-header {
+    height: 60px;
+  }
 }
 
 header {
@@ -671,18 +675,26 @@ a.meu-link:hover {
   nav {
     position: fixed;
     top: 0;
-    right: -260px; /* escondido */
+    right: -100%;
+
     width: 260px;
-    height: 100%;
+    height: 100vh;
+
     background: linear-gradient(135deg, #c39c61, #f2ebc4);
+
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
-    transition: 0.3s;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    align-items: center;
+    justify-content: flex-start;
 
-    pointer-events: none; /* evita clicar quando escondido */
+    padding-top: 120px;
+    gap: 25px;
+
+    transition: right 0.3s ease;
+
+    z-index: 9999;
+
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
   }
 
   nav.active {
@@ -691,9 +703,12 @@ a.meu-link:hover {
   }
 
   nav a {
-    margin: 15px 0;
-    font-size: 18px;
-    font-weight: 600; /* semi-negrito (bonito) */
+    color: #0e1f41;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+
+    display: block;
   }
 
   /* QUANDO ABRE */
