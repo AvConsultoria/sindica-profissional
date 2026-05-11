@@ -221,6 +221,30 @@ nav a {
   background: #f5f5f5;
 }
 
+/* FOTO */
+.foto-institucional {
+  width: 320px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 40px;
+  border-radius: 25px;
+  object-fit: cover;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  transition: 0.4s ease;
+  border: 5px solid #fff;
+}
+
+.foto-institucional:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .foto-institucional {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
 /* ================= CARDS ================= */
 
 .cards-servicos {
