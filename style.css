@@ -221,153 +221,121 @@ nav a {
   background: #f5f5f5;
 }
 
-/* ===== CARDS SERVIÇOS ===== */
+/* ================= CARDS ================= */
 
 .cards-servicos {
   display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 40px;
-
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 50px 5%;
 }
 
 /* CARD */
-
 .card-servico {
   background: #fff;
-
-  border-radius: 22px;
-
-  padding: 40px;
-
-  text-align: left;
-
-  border: 1px solid #e5e7eb;
-
-  transition: 0.35s;
-
-  display: flex;
-
-  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.4s ease;
 }
-
-/* HOVER */
 
 .card-servico:hover {
-  transform: translateY(-6px);
-
-  border-color: #f2ebc4;
-
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.08),
-    0 0 0 6px rgba(90, 148, 235, 0.06);
+  transform: translateY(-10px);
 }
 
-/* ÍCONE */
-
-.card-icon {
-  margin-bottom: 15px;
-}
-
-.card-icon img {
-  width: 55px;
-}
-
-.card-img {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 18px 18px 0 0;
-}
-
+/* IMAGEM */
 .card-img img {
   width: 100%;
-  height: 80%;
-  object-fit: contain;
+  height: 220px;
+  object-fit: cover;
   display: block;
 }
 
+/* CONTEÚDO */
+.card-conteudo {
+  padding: 30px;
+}
+
 /* TÍTULO */
-
-.card-servico h3 {
-  font-size: 22px;
-
-  color: #c39c61;
-
-  margin-bottom: 15px;
+.card-conteudo h3 {
+  font-size: 25px;
+  color: #0e1f41;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 /* TEXTO */
-
-.card-servico p {
-  color: #757575;
-
-  line-height: 1.6;
-
-  margin-bottom: 20px;
-}
-
-/* LINHA */
-
-.card-servico hr {
-  border: none;
-
-  height: 1px;
-
-  background: #b8b7b3;
-
-  margin-bottom: 20px;
+.card-conteudo p {
+  color: #5f6675;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 25px;
 }
 
 /* LISTA */
-
-.card-servico ul {
-  padding-left: 18px;
-
-  margin-bottom: 20px;
+.card-conteudo ul {
+  list-style: none;
+  margin-bottom: 25px;
 }
 
-.card-servico ul li {
-  margin-bottom: 6px;
-
-  color: #757575;
+.card-conteudo ul li {
+  margin-bottom: 12px;
+  color: #444;
+  font-size: 17px;
+  position: relative;
+  padding-left: 22px;
 }
 
-.card-servico ul li::marker {
-  color: #c39c61;
+/* BOLINHA */
+.card-conteudo ul li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #c39c61;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 10px;
 }
 
-/* LINK */
+/* LINHA */
+.linha {
+  display: block;
+  width: 55px;
+  height: 5px;
+  background: #0e1f41;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
 
-.card-servico a {
-  margin-top: auto;
-
-  font-weight: 600;
-
-  color: #c39c61;
-
+/* BOTÃO */
+.card-conteudo a {
+  display: inline-block;
+  background: #0e1f41;
+  color: white;
   text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-weight: 500;
 }
 
-.card-servico a:hover {
-  text-decoration: underline;
+.card-conteudo a:hover {
+  background: linear-gradient(135deg, #c39c61, #f2ebc4);
 }
 
-/* RESPONSIVO TABLET */
-
-@media (max-width: 1000px) {
-  .cards-servicos {
-    grid-template-columns: repeat(2, 1fr);
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .card-conteudo {
+    padding: 25px;
   }
-}
 
-/* RESPONSIVO MOBILE */
+  .card-conteudo h3 {
+    font-size: 24px;
+  }
 
-@media (max-width: 600px) {
-  .cards-servicos {
-    grid-template-columns: 1fr;
+  .card-conteudo p {
+    font-size: 16px;
   }
 }
 
