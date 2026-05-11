@@ -41,11 +41,17 @@ window.addEventListener("scroll", () => {
 
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
+
+  /* trava scroll no Android */
+  document.body.classList.toggle("menu-open");
 }
 
 document.querySelectorAll("#menu a").forEach((link) => {
   link.addEventListener("click", () => {
     document.getElementById("menu").classList.remove("active");
+
+    /* remove trava */
+    document.body.classList.remove("menu-open");
   });
 });
 
