@@ -1,7 +1,6 @@
 html {
   scroll-behavior: smooth;
   width: 100%;
-  overflow-x: hidden;
 }
 
 /* CORRIGE ÂNCORAS DO MENU */
@@ -40,7 +39,8 @@ body {
 }
 
 body.menu-open {
-  overflow: hidden;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 /* CONTAINER */
@@ -76,7 +76,7 @@ body.menu-open {
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10000;
 
   background: linear-gradient(135deg, #c39c61, #f2ebc4);
 }
