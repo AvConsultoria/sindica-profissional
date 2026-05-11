@@ -1,5 +1,7 @@
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* CORRIGE ÂNCORAS DO MENU */
@@ -33,6 +35,12 @@ h2 {
 body {
   line-height: 1.6;
   color: #333;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 /* CONTAINER */
@@ -697,7 +705,7 @@ a.meu-link:hover {
     right: -100%;
 
     width: 260px;
-    height: 100vh;
+    height: 100dvh;
 
     background: linear-gradient(135deg, #c39c61, #f2ebc4);
 
