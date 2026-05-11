@@ -1,7 +1,7 @@
 /* ANIMAÇÃO GLOBAL DO SITE */
 
 const elementos = document.querySelectorAll(
-  "section, div, h1, h2, h3, p, img, button, a",
+  "section, h1, h2, h3, p, img, button",
 );
 
 const observer = new IntersectionObserver(
