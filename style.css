@@ -191,12 +191,21 @@ nav a {
   padding: 60px 20px;
 }
 
+/* BANNER */
 .banner-img {
   width: 60%;
   height: 60%;
   object-fit: cover;
   display: block;
   margin: 0 auto;
+}
+
+/* BANNER CELULAR */
+@media (max-width: 768px) {
+  .banner-img {
+    width: 120%;
+    height: auto;
+  }
 }
 
 .bg {
