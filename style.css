@@ -10,12 +10,15 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
+  overflow-x: hidden;
+  width: 100%;
 }
 /* =========BODY========== */
 body {
   background: #ecebeb;
   color: #222;
   overflow-x: hidden;
+  width: 100%;
 }
 
 body.dark-mode {
@@ -76,7 +79,7 @@ img {
 
 header {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
 
   background: url("img/logo-day.png");
 
@@ -245,7 +248,7 @@ body.dark-mode .nav-links a:hover {
 /* HERO */
 
 .hero {
-  min-height: 100vh;
+  min-height: 100dvh;
 
   display: flex;
   align-items: center;
@@ -814,18 +817,21 @@ body.dark-mode .contato {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -280px;
 
     width: 280px;
-    height: 100vh;
+    height: 100dvh;
 
     background: #111;
 
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     transition: 0.4s;
+
+    overflow-x: hidden;
   }
 
   .nav-links.active {
