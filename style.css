@@ -242,6 +242,10 @@ body.dark-mode nav {
   .logo {
     font-size: 15px;
   }
+
+  .logo span {
+    font-size: 15px;
+  }
 }
 
 .nav-links {
