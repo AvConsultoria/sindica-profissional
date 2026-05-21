@@ -238,13 +238,10 @@ body.dark-mode nav {
   color: #10234a;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
   .logo {
-    font-size: 15px;
-  }
-
-  .logo span {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
