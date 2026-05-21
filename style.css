@@ -95,6 +95,17 @@ body.dark-mode header {
   background-repeat: no-repeat;
 }
 
+/* MOBILE HEADER */
+@media (max-width: 768px) {
+  header {
+    background-position: center center;
+  }
+
+  body.dark-mode header {
+    background-position: center center;
+  }
+}
+
 /* INDICADOR DE SCROLL */
 .scroll-indicator {
   position: absolute;
@@ -222,6 +233,7 @@ body.dark-mode .nav-links a:hover {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .menu-btn span {
@@ -247,6 +259,20 @@ body.dark-mode .nav-links a:hover {
 .hero-text {
   max-width: 700px;
   color: white;
+}
+
+/* ========= RESPONSIVO ========= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    padding: 120px 8% 60px;
+    gap: 25px;
+  }
 }
 
 .mini-title {
@@ -334,6 +360,24 @@ body.dark-mode .hero-text p {
   max-width: 520px;
   height: auto;
   transform: scale(1.05);
+}
+
+/* =========RESPONSIVO HERO IMG MOBILE PEQUENO=========== */
+@media (max-width: 480px) {
+  .hero-img img {
+    max-width: 200px;
+  }
+}
+/* =========RESPONSIVO HERO IMG=========== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img img {
+    max-width: 280px;
+  }
 }
 
 /* ==================== */
@@ -761,38 +805,35 @@ body.dark-mode .contato {
 /* ==================== */
 /* RESPONSIVO */
 /* ==================== */
-
-/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  /* NAV */
   nav {
-    padding: 18px 5%;
-    overflow: hidden;
+    padding: 18px 20px;
   }
 
-  .logo {
-    font-size: 18px;
-    white-space: nowrap;
+  .menu-btn {
+    display: flex;
   }
 
-  /* MENU */
   .nav-links {
     position: fixed;
 
     top: 0;
-    right: -260px;
+    right: -100%;
 
-    width: 260px;
-    height: 100dvh;
+    width: 100%;
+    height: 100vh;
 
     background: #111;
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
-    gap: 30px;
+    gap: 35px;
+
+    list-style: none;
 
     transition: right 0.4s ease;
 
@@ -804,122 +845,76 @@ body.dark-mode .contato {
   }
 
   .nav-links a {
-    font-size: 20px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
   }
+}
 
+@media (max-width: 900px) {
   .menu-btn {
     display: flex;
     z-index: 1001;
   }
 
-  /* HERO */
-  .hero {
-    min-height: 100dvh;
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    width: 280px;
+    height: 100vh;
+
+    background: #111;
 
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    text-align: center;
-
-    padding: 140px 7% 70px;
-
-    gap: 30px;
+    transition: 0.4s;
   }
 
-  .hero-text {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .mini-title {
-    font-size: 14px;
-    letter-spacing: 3px;
-    line-height: 1.6;
+  .nav-links.active {
+    right: 0;
   }
 
   .hero-text h1 {
-    font-size: 52px;
-    line-height: 1.1;
-    margin: 20px 0;
+    font-size: 42px;
   }
 
-  .hero-text p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 25px;
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-img img {
+    max-width: 100%;
+  }
+
+  .contato-container {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title h2,
+  .sobre-text h2,
+  .contato-text h2 {
+    font-size: 34px;
   }
 
   .hero-buttons {
-    width: 100%;
-
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
   }
 
-  .btn,
-  .btn-outline {
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
+  .sobre-box {
+    text-align: left;
   }
 
-  /* IMAGEM */
-  .hero-img img {
-    width: 100%;
-    max-width: 260px;
-
-    transform: none;
+  .nav-links {
+    z-index: 999;
   }
 
-  /* SECTIONS */
-  section {
-    padding: 80px 6%;
-  }
-
-  /* SOBRE */
-  .sobre-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .sobre-text {
-    text-align: center;
-  }
-
-  /* SERVIÇOS */
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  /* NÚMEROS */
-  .numeros {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .numero-box h2 {
-    font-size: 38px;
-  }
-
-  /* DIFERENCIAIS */
-  .diferenciais-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* CONTATO */
-  .contato-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .contato-text {
-    text-align: center;
-  }
-
-  /* FOOTER */
   .footer-content {
     grid-template-columns: 1fr;
+    gap: 40px;
     text-align: center;
   }
 
@@ -929,38 +924,5 @@ body.dark-mode .contato {
 
   .footer-contato {
     align-items: center;
-  }
-}
-
-/* CELULARES PEQUENOS */
-@media (max-width: 480px) {
-  .logo {
-    font-size: 16px;
-  }
-
-  .hero {
-    padding-top: 130px;
-  }
-
-  .hero-text h1 {
-    font-size: 42px;
-  }
-
-  .hero-text p {
-    font-size: 15px;
-  }
-
-  .mini-title {
-    font-size: 12px;
-  }
-
-  .hero-img img {
-    max-width: 220px;
-  }
-
-  .section-title h2,
-  .sobre-text h2,
-  .contato-text h2 {
-    font-size: 28px;
   }
 }
