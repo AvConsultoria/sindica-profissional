@@ -107,50 +107,82 @@ body.dark-mode header {
 }
 
 /* INDICADOR DE SCROLL */
+/* ================= SCROLL INDICATOR ================= */
+
 .scroll-indicator {
   position: absolute;
 
-  bottom: 25px;
   left: 50%;
+  bottom: 25px;
 
   transform: translateX(-50%);
 
-  z-index: 1;
+  width: 30px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
 
   pointer-events: none;
 }
 
 .scroll-mouse {
-  width: 26px;
-  height: 40px;
+  width: 24px;
+  height: 38px;
+
   border: 2px solid #fff;
   border-radius: 20px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 6px;
+
+  position: relative;
 }
 
 .scroll-dot {
   width: 4px;
   height: 8px;
-  background: #fff;
+
+  background: white;
   border-radius: 10px;
+
+  position: absolute;
+
+  top: 6px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
   animation: scrollMove 1.5s infinite;
 }
 
 @keyframes scrollMove {
   0% {
-    transform: translateY(0);
     opacity: 1;
+    top: 6px;
   }
+
   50% {
-    transform: translateY(12px);
-    opacity: 0.4;
+    opacity: 0.3;
+    top: 16px;
   }
+
   100% {
-    transform: translateY(0);
     opacity: 1;
+    top: 6px;
+  }
+}
+
+/* HERO */
+.hero {
+  position: relative;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 15px;
+    transform: translateX(-50%) scale(0.8);
   }
 }
 
@@ -261,7 +293,6 @@ body.dark-mode .nav-links a:hover {
   gap: 50px;
   padding: 0 8%;
   position: relative;
-  overflow: hidden;
 }
 
 .hero-text {
@@ -932,11 +963,5 @@ body.dark-mode .contato {
 
   .footer-contato {
     align-items: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .scroll-indicator {
-    display: none;
   }
 }
