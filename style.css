@@ -780,24 +780,23 @@ body.dark-mode .contato {
     position: fixed;
 
     top: 0;
-    right: -100%;
+    right: -260px;
 
     width: 260px;
     height: 100dvh;
 
     background: #111;
 
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     gap: 30px;
 
-    transition: 0.4s;
+    transition: right 0.4s ease;
 
     z-index: 999;
-
-    overflow-y: auto;
   }
 
   .nav-links.active {
