@@ -814,6 +814,11 @@ body.dark-mode .contato {
 /* RESPONSIVO */
 /* ==================== */
 @media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 10px;
+    transform: translateX(-50%) scale(0.8);
+  }
+
   nav {
     padding: 18px 20px;
   }
