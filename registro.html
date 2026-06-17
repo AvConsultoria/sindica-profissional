@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+
+    <link rel="stylesheet" href="formularioreclamacoes.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Andresa<span>Vieira</span></div>
+        
+      
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Página Inicial</a></li>
+        </ul>
+
+          <button id="dark-mode-toggle" class="dark-btn">
+        <i class="fa-solid fa-moon"></i>
+       </button>
+
+        <div class="menu-btn" id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </nav>
+    
+      <br>
+
+<section class="formulariodereclamacao">
+
+    <div class="container">
+
+        <h1>Registros</h1>
+
+        <form id="formReclamacao">
+
+            <input
+                type="hidden"
+                name="condominio"
+                value="Condomínio Jardins">
+
+            <div class="campo">
+                <label for="nome">Nome Completo</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    required>
+            </div>
+
+          
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seuemail@exemplo.com"
+                  required>
+            </div>
+
+        
+
+            <div class="campo">
+                <label for="tipo">Unidade</label>
+
+                <select
+                    id="unidade"
+                    name="unidade">
+
+                    <option>Solar</option> 
+
+                </select>
+            </div>
+
+          
+
+            <div class="campo">
+                <label for="telefone">Telefone</label>
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone">
+            </div>
+
+           
+
+            <div class="campo">
+                <label for="tipo">Tipo</label>
+
+                <select
+                    id="tipo"
+                    name="tipo">
+
+                    <option>Reclamação</option> 
+                    <option>Sugestão</option> 
+                    <option>Ocorrência</option>
+
+                </select>
+            </div>
+
+           
+
+            <div class="campo full">
+                <label for="descricao">Descrição</label>
+
+                <textarea
+                    id="descricao"
+                    name="descricao"
+                    rows="6"
+                    placeholder="Descreva sua reclamação..."
+                    required></textarea>
+            </div>
+
+            <div id="status"></div>
+
+            <button type="submit">
+                Enviar Registro
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+emailjs.init({
+    publicKey: "lUuLXMmJn6nBK4H0A"
+});
+
+document
+.getElementById("formReclamacao")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const status =
+    document.getElementById("status");
+
+    status.innerHTML = "📤 Enviando solicitação...";
+
+    emailjs.sendForm(
+        "service_d8eoxqc",
+        "template_snx9x9l",
+        this
+    )
+    .then(() => {
+
+        status.innerHTML = `
+            <div style="
+                margin-top:20px;
+                padding:15px;
+                border-radius:10px;
+                background:#e8fff0;
+                color:#0a7a35;
+                font-weight:500;">
+                ✅ Sua solicitação foi enviada com sucesso!<br><br>
+                Recebemos sua mensagem e ela foi encaminhada para a administração responsável.
+            </div>
+        `;
+
+        this.reset();
+
+    })
+    .catch((error) => {
+
+        console.error(error);
+
+        status.innerHTML = `
+            <div style="
+                margin-top:20px;
+                padding:15px;
+                border-radius:10px;
+                background:#ffecec;
+                color:#c62828;
+                font-weight:500;">
+                ❌ Erro ao enviar. Tente novamente.
+            </div>
+        `;
+
+    });
+
+});
+
+const darkBtn = document.getElementById('dark-mode-toggle');
+
+darkBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    const icon = darkBtn.querySelector('i');
+
+    if(document.body.classList.contains('dark-mode')){
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+});
+
+</script>
+
+</body>
+</html>
