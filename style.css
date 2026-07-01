@@ -7,6 +7,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
@@ -205,7 +210,8 @@ nav {
   z-index: 1000;
 
   background: rgba(212, 161, 94, 0.25);
-  backdrop-filter: blur(12x);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: 0.4s;
 }
 
@@ -344,14 +350,6 @@ body.dark-mode .mini-title {
 }
 
 .hero-text p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: white;
-
-  margin-bottom: 35px;
-}
-
-body.dark-mode .hero-text p {
   font-size: 18px;
   line-height: 1.8;
   color: white;
@@ -592,8 +590,16 @@ section {
   text-align: center;
 }
 
+body.dark-mode .numeros {
+  background: #111;
+}
+
 .numero-box {
   color: #222;
+}
+
+body.dark-mode .numero-box {
+  color: white;
 }
 
 .numero-box h2 {
@@ -604,6 +610,10 @@ section {
 .numero-box p {
   margin-top: 10px;
   color: #222;
+}
+
+body.dark-mode .numero-box p {
+  color: #ccc;
 }
 /* ==================== */
 /* DIFERENCIAIS */
@@ -659,10 +669,6 @@ body.dark-mode .diferenciais-grid {
 .diferencial-item:hover i {
   transform: rotate(10deg) scale(1.2);
   color: #b9833f;
-}
-
-.diferencial-item i {
-  color: #d4a15e;
 }
 
 /* ==================== */
@@ -782,6 +788,8 @@ body.dark-mode .certificado-grid a:hover{
 /* CONTATO */
 /* ==================== */
 
+
+
 .contato {
   background: #ecebeb;
   color: #222;
@@ -793,6 +801,10 @@ body.dark-mode .contato {
 }
 
 .contato-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -807,6 +819,10 @@ body.dark-mode .contato {
 .contato-text p {
   line-height: 1.9;
   color: #222;
+}
+
+body.dark-mode .contato-text p {
+  color: #ccc;
 }
 
 /* ==================== */
@@ -1262,4 +1278,3 @@ body.dark-mode .reclamacoes .btn-card:hover{
     align-items: center;
   }
 }
-
