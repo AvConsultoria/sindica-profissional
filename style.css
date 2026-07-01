@@ -88,6 +88,8 @@ header {
 }
 
 body.dark-mode header {
+  width: 100%;
+  min-height: 100vh;
   background: url("img/logo-night.png");
 
   background-size: cover;
@@ -203,7 +205,8 @@ nav {
   z-index: 1000;
 
   background: rgba(212, 161, 94, 0.25);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12x);
+  transition: 0.4s;
 }
 
 body.dark-mode nav {
@@ -241,7 +244,7 @@ body.dark-mode nav {
 /* MOBILE */
 @media (max-width: 768px) {
   .logo {
-    font-size: 18px !important;
+    font-size: 18px;
   }
 }
 
@@ -663,6 +666,119 @@ body.dark-mode .diferenciais-grid {
 }
 
 /* ==================== */
+/* CERTIFICADOS */
+/* ==================== */
+.certificados {
+    padding: 80px 20px;
+    background: #f5f5f5;
+}
+
+.certificados h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 60px;
+}
+
+.certificados-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.certificado-grid {
+    background: #fff;
+    width: 340px;
+    min-height: 280px;
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+.certificado-grid:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.certificado-grid h2 {
+    font-size: 1.8rem;
+    color: #111827;
+    margin-bottom: 20px;
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificado-grid p {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 35px;
+}
+
+.certificado-grid a {
+    margin-top: auto;
+
+    text-decoration: none;
+    background: #d4a15e;
+    color: #fff;
+    font-weight: 600;
+
+    padding: 14px 28px;
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+}
+
+.certificado-grid a:hover {
+    background: #c08b47;
+    transform: scale(1.05);
+}
+
+/* Modo Escuro - Certificados */
+
+body.dark-mode .certificados{
+    background: #121212;
+}
+
+body.dark-mode .certificados h1{
+    color: #ffffff;
+}
+
+body.dark-mode .certificado-grid{
+    background: #1e1e1e;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+body.dark-mode .certificado-grid h2{
+    color: #ffffff;
+}
+
+body.dark-mode .certificado-grid p{
+    color: #cfcfcf;
+}
+
+body.dark-mode .certificado-grid a{
+    background: #d4a15e;
+    color: #ffffff;
+}
+
+body.dark-mode .certificado-grid a:hover{
+    background: #b9833f;
+}
+
+/* ==================== */
 /* CONTATO */
 /* ==================== */
 
@@ -691,6 +807,179 @@ body.dark-mode .contato {
 .contato-text p {
   line-height: 1.9;
   color: #222;
+}
+
+/* ==================== */
+/* RECLAMAÇÕES */
+/* ==================== */
+
+.reclamacoes{
+    background:#ecebeb;
+    padding:110px 5%;
+}
+
+.reclamacoes .content{
+    width:100%;
+}
+
+.reclamacoes .topbar{
+    margin-bottom:40px;
+}
+
+.reclamacoes .mini-title{
+    color:#d4a15e;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.reclamacoes .topbar h1{
+    font-size:48px;
+    color:#10234a;
+    margin:10px 0;
+}
+
+.reclamacoes .topbar p{
+    color:#666;
+    font-size:18px;
+}
+
+/* GRID */
+
+.reclamacoes .cards{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+        align-items:stretch;
+}
+
+/* CARD */
+
+.reclamacoes .card{
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+      display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.reclamacoes .card:hover{
+    transform:translateY(-8px);
+}
+
+.reclamacoes .card h2{
+    color:#10234a;
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.reclamacoes .card p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:25px;
+
+    flex:1;
+}
+
+/* BOTÃO */
+
+.reclamacoes .btn-card{
+    display:block;
+
+    width:100%;
+
+    text-align:center;
+
+    background:#d4a15e;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    margin-top:auto;
+}
+
+.reclamacoes .btn-card:hover{
+    background:#b9833f;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    .reclamacoes{
+        padding:80px 20px;
+    }
+
+    .reclamacoes .topbar h1{
+        font-size:34px;
+    }
+
+    .reclamacoes .topbar p{
+        font-size:16px;
+    }
+
+    .reclamacoes .cards{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ==================== */
+/* DARK MODE */
+/* ==================== */
+
+body.dark-mode .reclamacoes{
+    background:#121212;
+}
+
+body.dark-mode .reclamacoes .topbar h1{
+    color:#ffffff;
+}
+
+body.dark-mode .reclamacoes .topbar p{
+    color:#bdbdbd;
+}
+
+body.dark-mode .reclamacoes .card{
+    background:#1e1e1e;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+body.dark-mode .reclamacoes .card h2{
+    color:#ffffff;
+}
+
+body.dark-mode .reclamacoes .card p{
+    color:#cfcfcf;
+}
+
+body.dark-mode .reclamacoes .btn-card{
+    background:#d4a15e;
+}
+
+body.dark-mode .reclamacoes .btn-card:hover{
+    background:#b9833f;
 }
 
 .formulario {
@@ -732,6 +1021,7 @@ body.dark-mode .contato {
 
   transition: 0.3s;
 }
+
 
 .btn-whatsapp {
   width: 100%;
@@ -972,3 +1262,4 @@ body.dark-mode .contato {
     align-items: center;
   }
 }
+
