@@ -44,3 +44,15 @@ const darkBtn = document.getElementById("dark-mode-toggle");
 darkBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
+
+const certificados = document.querySelectorAll('.certificado-grid');
+
+certificados.forEach(certificado => {
+    certificado.addEventListener('click', () => {
+        certificado.style.transform = 'scale(1.03)';
+
+        setTimeout(() => {
+            certificado.style.transform = '';
+        }, 200);
+    });
+});
